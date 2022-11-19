@@ -13,6 +13,7 @@ soup = BeautifulSoup(webpage.content, "lxml")
 # Outer Tag Object
 title = soup.find("span", attrs={"id":'productTitle'})
 
+# Inner NavigableString Object
 title_value = title.string
 
 # Title as a string value
