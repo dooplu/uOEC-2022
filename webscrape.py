@@ -30,7 +30,14 @@ def get_price(soup):
 
     return price
 
+def get_weight(soup):
+    try:
+        weight = soup.find("span", class_='a-size-base prodDetAttrValue').string.strip()
 
+    except AttributeError:
+        weight = ""
+
+    return weight
 
 
 
@@ -42,7 +49,7 @@ if __name__ == '__main__':
                 'Accept-Language': 'en-US, en;q=0.5'})
 
     # The webpage URL
-    URL = "https://www.amazon.com/Flask-Narrow-Mouth-Sports-Bottle/dp/B082H6MLKP/ref=sr_1_4_sspa?keywords=water%2Bbottles&qid=1668884014&sprefix=water%2Caps%2C76&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"
+    URL = "https://www.amazon.com/Callaway-Driver-Ventus-Regular-Degrees/dp/B09RB45J8K/ref=sr_1_13?crid=1490WB2GFOO09&keywords=50%2Bgrams&qid=1668884457&sprefix=50%2Bgram%2Caps%2C85&sr=8-13&th=1"
 
     # HTTP Request
     webpage = requests.get(URL, headers=HEADERS)
@@ -53,6 +60,7 @@ if __name__ == '__main__':
     # Function calls to display all necessary product information
     print("Product Title =", get_title(soup))
     print("Product Price =", get_price(soup))
+    print("Product Weight =", get_weight(soup))
 
     print()
     print()
