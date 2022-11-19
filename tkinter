@@ -1,0 +1,64 @@
+from tkinter import *
+from tkinter import messagebox
+
+window = Tk()
+window.geometry('650x250')
+lbl = Label(window, text="First link")
+lbl.grid(column=0, row=0)
+txt = Entry(window, width=25)
+txt.grid(column=1, row=0)
+lbl = Label(window, text="Local store address")
+lbl.grid(column=0, row=1)
+txt = Entry(window, width=25)
+txt.grid(column=1, row=1)
+lbl = Label(window, text="Address")
+lbl.grid(column=5, row=0)
+txt = Entry(window, width=25)
+txt.grid(column=9, row=0)
+lbl = Label(window, text="Price 1:")
+lbl.grid(column=0, row=15)
+txt = Entry(window, width=25)
+txt.grid(column=1, row=15)
+
+lbl = Label(window, text="Emmision 1:")
+lbl.grid(column=0, row=20)
+txt = Entry(window, width=25)
+txt.grid(column=1, row=20)
+
+lbl = Label(window, text="Price 2:")
+lbl.grid(column=5, row=15)
+txt = Entry(window, width=25)
+txt.grid(column=9, row=15)
+
+lbl = Label(window, text="Emmision 2:")
+lbl.grid(column=5, row=20)
+txt = Entry(window, width=25)
+txt.grid(column=9, row=20)
+
+lbl = Label(window, text="C02/$ 1:")
+lbl.grid(column=0, row=25)
+txt = Entry(window, width=25)
+txt.grid(column=1, row=25)
+
+lbl = Label(window, text="C02/$ 2:")
+lbl.grid(column=5, row=25)
+txt = Entry(window, width=25)
+txt.grid(column=9, row=25)
+
+lbl = Label(window, text="Best option:")
+lbl.grid(column=1, row=35)
+txt = Entry(window, width=25)
+txt.grid(column=2, row=35)
+
+
+
+
+def clicked():
+
+    btn = Button(window,text='Submit', command=clicked)
+
+    btn.grid(column=9,row=1)
+
+
+
+window.mainloop()
